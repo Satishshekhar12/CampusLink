@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import user from "../assets/abc.png";
+import user from "../../assets/abc.png";
 import { RiMore2Fill, RiShieldStarFill, RiVipFill } from "react-icons/ri";
 import { MdWorkspacePremium } from "react-icons/md";
 import SearchModal from "./SearchModal";
-import chatData from "../data/chats";
+import chatData from "../../data/chats";
 function Chatlist() {
 	const [chats, setChats] = useState([]);
 

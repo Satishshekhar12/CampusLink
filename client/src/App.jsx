@@ -1,11 +1,8 @@
-import HeaderBar from "./components/layout/HeaderBar";
-import UsersPane from "./components/sidebar/UsersPane";
-import ChatPane from "./components/chat/ChatPane";
-import Register from "./components/register";
-import Login from "./components/Login";
-import NavLinks from "./components/navlinks";
-import Chatlist from "./components/Chatlist";
-import Chatbox from "./components/Chatbox";
+import Register from "./components/pages/Register";
+import Login from "./components/pages/Login";
+import NavLinks from "./components/pages/navlinks";
+import Chatlist from "./components/pages/Chatlist";
+import Chatbox from "./components/pages/Chatbox";
 
 function App() {
 	return (
