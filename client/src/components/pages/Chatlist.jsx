@@ -4,7 +4,7 @@ import { RiMore2Fill, RiShieldStarFill, RiVipFill } from "react-icons/ri";
 import { MdWorkspacePremium } from "react-icons/md";
 import SearchModal from "./SearchModal";
 import chatData from "../../data/chats";
-function Chatlist() {
+function Chatlist({ onSelectChat, selectedChatId }) {
 	const [chats, setChats] = useState([]);
 
 	useEffect(() => {
@@ -56,7 +56,10 @@ function Chatlist() {
 					{chats.map((it) => (
 						<button
 							key={it.id}
-							className="flex items-start justify-between w-[100%]  border-b border-[#9090902c] px-5  pb-3 pt-3"
+							onClick={() => onSelectChat(it)}
+							className={`flex items-start justify-between w-[100%] border-b border-[#9090902c] px-5 pb-3 pt-3 transition-colors hover:bg-slate-50 ${
+								selectedChatId === it.id ? "bg-blue-50" : ""
+							}`}
 						>
 							<div className="flex flex-row gap-3 items-start">
 								<img

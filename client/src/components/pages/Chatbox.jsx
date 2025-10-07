@@ -1,5 +1,4 @@
 import React from "react";
-import user from "../../assets/user.jpg";
 import {
 	RiMore2Fill,
 	RiEmotionLine,
@@ -47,17 +46,34 @@ const mockMessages = [
 	},
 ];
 
-function Chatbox() {
+function Chatbox({ selectedChat }) {
+	if (!selectedChat) {
+		return (
+			<section className="h-full w-full flex flex-col bg-white items-center justify-center">
+				<div className="text-center text-gray-400">
+					<p className="text-xl mb-2">Select a chat to start messaging</p>
+					<p className="text-sm">Choose a conversation from the list</p>
+				</div>
+			</section>
+		);
+	}
+
+	const chatUser = selectedChat.users[1];
+
 	return (
 		<section className="h-full w-full flex flex-col bg-white">
 			<div className="flex flex-col h-full w-full">
 				{/* Header */}
 				<header className="flex items-center justify-between w-full border-b border-l border-l-gray-100 border-gray-200 p-4 sticky top-0 bg-white z-10">
 					<div className="flex items-center">
-						<img src={user} alt="user" className="h-12 w-12 rounded-full" />
+						<img
+							src={chatUser.image}
+							alt="user"
+							className="h-12 w-12 rounded-full"
+						/>
 						<span className="ml-3">
 							<h3 className="font-semibold text-[#2a3d39] md:text-[17px]">
-								sanu
+								{chatUser.fullName}
 							</h3>
 							<p className="font-light text-[#2a3d39] text-[15px]">online</p>
 						</span>
